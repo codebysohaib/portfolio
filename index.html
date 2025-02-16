@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Sohaib Asif | Full Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-color: #2A5C82;
+      --secondary-color: #3A8BB9;
+      --accent-color: #5AB9EA;
+      --text-color: #2D3436;
+      --light-bg: #F8F9FA;
+      --white: #FFFFFF;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: var(--light-bg);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      padding: 4rem 1.5rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .profile-container {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      border: 4px solid var(--white);
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .header-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Main Content */
+    main {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      padding: 2rem;
+      text-align: center;
+      background: var(--light-bg);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+
+    .skill-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    .skill-card:hover .skill-icon {
+      color: var(--white);
+    }
+
+    /* Projects Gallery */
+    .projects-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .project-image {
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--accent-color);
+    }
+
+    .project-info {
+      padding: 1.5rem;
+    }
+
+    .project-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      flex: 1;
+      padding: 0.8rem;
+      text-align: center;
+      background: var(--primary-color);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: var(--secondary-color);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: var(--white);
+      color: var(--primary-color);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-color);
+      color: var(--white);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      font-size: 1.5rem;
+      color: var(--white);
+      transition: opacity 0.3s ease;
+    }
+
+    .social-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2rem;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+      }
+
+      .section {
+        padding: 2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 3rem 1rem;
+      }
+
+      .profile-container {
+        width: 120px;
+        height: 120px;
+      }
+
+      .header-content h1 {
+        font-size: 1.75rem;
+      }
+
+      .section {
+        padding: 1.5rem;
+      }
+
+      .project-links {
+        flex-direction: column;
+      }
+
+      .contact-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-content">
+      <div class="profile-container">
+        <img src="quality_restoration_20250205092947107.jpg" alt="Muhammad Sohaib Asif">
+      </div>
+      <h1>Muhammad Sohaib Asif</h1>
+      <p class="tagline">Full Stack Developer & Digital Creator</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Skills Section -->
+    <section class="section">
+      <h2>Technical Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fas fa-code skill-icon"></i>
+          <h3>Web Development</h3>
+          <p>Modern web applications using MERN stack & latest frameworks</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-film skill-icon"></i>
+          <h3>Video Production</h3>
+          <p>Professional editing & motion graphics with Adobe Suite</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-palette skill-icon"></i>
+          <h3>Digital Design</h3>
+          <p>UI/UX, Branding & 3D modeling solutions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section">
+      <h2>Featured Projects</h2>
+      <div class="projects-gallery">
+        <div class="project-card">
+         
+          <div class="project-info">
+            <h3>Smart Parking System</h3>
+            <p>AI-powered parking management solution with real-time tracking</p>
+            <div class="project-links">
+              <a href="https://parkingsystembysohaib.netlify.app/" class="project-link" target="_blank">Demo</a>
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          
+          <div class="project-info">
+            <h3>Network Analyzer</h3>
+            <p>Comprehensive internet speed test with detailed analytics</p>
+            <div class="project-links">
+              <a href="https://nettestbysohaib.netlify.app/" class="project-link" target="_blank">Demo</a>
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+ <div class="project-card">
+          
+          <div class="project-info">
+            <h3>CGPA Calculator</h3>
+            <p>Calculate Your cgpa & gpa </p>
+            <div class="project-links">
+              <a href="https://uoncgpacalculate.netlify.app/" class="project-link" target="_blank">Demo</a>
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Start Your Digital Project</h2>
+    <p>Let's collaborate to bring your ideas to life!</p>
+    <a href="https://wa.me/923363761607" class="contact-button" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+      Contact on WhatsApp
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.tiktok.com/@mughalsab_0" class="social-link" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1UenwYd2Rf/" class="social-link" target="_blank">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/mughalsab_0" class="social-link" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://github.com/codebysohaib" class="social-link" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <p>&copy; 2025 Muhammad Sohaib Asif. All rights reserved.</p>
+  </footer>
+</body>
+</html>
